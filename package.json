@@ -2,7 +2,7 @@
   "name": "flagdrift",
   "version": "0.1.0",
   "description": "Diffs a CLI's real --help surface against its documented flags in Markdown — undocumented flags, phantom flags, stale defaults — and fails CI on drift.",
-  "author": "JaydenCJ",
+  "author": "JaydenCJ <aisingioro.kiyon@gmail.com>",
   "license": "MIT",
   "type": "module",
   "bin": {
