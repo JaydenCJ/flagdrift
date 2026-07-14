@@ -1,0 +1,10 @@
+{
+  "failOn": "warning",
+  "targets": [
+    {
+      "name": "shipctl",
+      "command": "node democli.mjs --help",
+      "docs": ["docs/good.md"]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+  <rect width="760" height="420" rx="10" fill="#0d1117"/>
+  <rect width="760" height="34" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="17" r="6" fill="#28c840"/>
+  <text x="380" y="21" fill="#8b949e" text-anchor="middle">flagdrift — your --help vs your docs, gated in CI</text>
+
+  <text x="24" y="64" fill="#7ee787">$ flagdrift check --cmd "node democli.mjs --help" --docs docs/drifted.md</text>
+  <text x="24" y="88" fill="#c9d1d9">flagdrift: shipctl — 11 help flags, 3 commands vs 1 docs file</text>
+
+  <text x="24" y="116" fill="#c9d1d9">  <tspan fill="#f85149">error D101</tspan> --retries</text>
+  <text x="24" y="134" fill="#8b949e">      `--retries &lt;N&gt;` is in the live --help but never appears in the docs</text>
+  <text x="24" y="152" fill="#3fb950">      fix: add it to the flag reference (default: 3), or pass --ignore '--retries'</text>
+
+  <text x="24" y="180" fill="#c9d1d9">  <tspan fill="#f85149">error D102</tspan> docs/drifted.md:10 › --concurrency</text>
+  <text x="24" y="198" fill="#8b949e">      the docs mention `--concurrency` but the live --help has no such flag</text>
+  <text x="24" y="216" fill="#3fb950">      fix: update or remove the reference — it fails for anyone who copies it</text>
+
+  <text x="24" y="244" fill="#c9d1d9">  <tspan fill="#d29922">warning D103</tspan> docs/drifted.md:24 › --timeout</text>
+  <text x="24" y="262" fill="#8b949e">      the docs say the default for `--timeout` is `60`, but --help says `30`</text>
+  <text x="24" y="280" fill="#3fb950">      fix: update the table cell to `30`</text>
+
+  <text x="24" y="308" fill="#c9d1d9">  <tspan fill="#f85149">error D106</tspan> docs/drifted.md:10 › deploy</text>
+  <text x="24" y="326" fill="#8b949e">      the docs invoke a `deploy` subcommand that the live --help does not list</text>
+
+  <text x="24" y="360" fill="#c9d1d9">flagdrift: <tspan fill="#f85149">FAIL</tspan> — 3 errors, 3 warnings, 3 info (fail-on: warning)  <tspan fill="#8b949e">exit 1</tspan></text>
+  <text x="24" y="392" fill="#8b949e"># fix the docs, re-run, merge green — the docs can no longer lie</text>
+</svg>

@@ -1,0 +1,54 @@
+{
+  "name": "flagdrift",
+  "version": "0.1.0",
+  "description": "Diffs a CLI's real --help surface against its documented flags in Markdown — undocumented flags, phantom flags, stale defaults — and fails CI on drift.",
+  "author": "JaydenCJ",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "flagdrift": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"tests/*.test.mjs\"",
+    "smoke": "bash scripts/smoke.sh"
+  },
+  "keywords": [
+    "cli",
+    "help",
+    "documentation",
+    "drift",
+    "markdown",
+    "ci",
+    "docs-as-code",
+    "linter"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydenCJ/flagdrift.git"
+  },
+  "homepage": "https://github.com/JaydenCJ/flagdrift#readme",
+  "bugs": {
+    "url": "https://github.com/JaydenCJ/flagdrift/issues"
+  }
+}
